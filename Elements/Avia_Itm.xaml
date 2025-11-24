@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Airlines_Shashin.Elements"
-             mc:Ignorable="d" Height="137" Width="752">
+             mc:Ignorable="d" Height="154" Width="752">
     <Grid Background="LightGray" Margin="10,10,10,0" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="229*"/>

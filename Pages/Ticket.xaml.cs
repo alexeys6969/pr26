@@ -20,9 +20,14 @@ namespace Airlines_Shashin.Pages
     /// </summary>
     public partial class Ticket : Page
     {
-        public Ticket()
+        public Ticket(string from, string to)
         {
             InitializeComponent();
+        }
+
+        private void Back(object sender, RoutedEventArgs e)
+        {
+            MainWindow.mainWindow.frame.Navigate(new Pages.Main());
         }
     }
 }

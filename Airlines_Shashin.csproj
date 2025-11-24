@@ -67,6 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\TicketClass.cs" />
     <Compile Include="Elements\Avia_Itm.xaml.cs">
       <DependentUpon>Avia_Itm.xaml</DependentUpon>
     </Compile>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Airlines_Shashin"
         mc:Ignorable="d"
-        Title="Управление авиалиниями" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="Управление авиалиниями" Height="500" Width="850" MinHeight="500" MinWidth="850">
     <Grid>
         <Frame x:Name="frame" NavigationUIVisibility="Hidden"/>
     </Grid>

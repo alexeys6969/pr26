@@ -24,5 +24,15 @@ namespace Airlines_Shashin.Pages
         {
             InitializeComponent();
         }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            MainWindow.mainWindow.Close();
+        }
+
+        private void Search(object sender, RoutedEventArgs e)
+        {
+            MainWindow.mainWindow.frame.Navigate(new Pages.Ticket(from.Text, to.Text));
+        }
     }
 }
