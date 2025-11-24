@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Airlines_Shashin.Classes;
+using MySql.Data.MySqlClient;
 
 namespace Airlines_Shashin
 {
@@ -28,6 +29,16 @@ namespace Airlines_Shashin
             InitializeComponent();
             mainWindow = this;
             frame.Navigate(new Pages.Main());
+        }
+
+        public void LoadTickets()
+        {
+            ticketsClasses.Clear();
+            string connection = "server=localhost;port=3306;database=pr26;uid=root;pwd=root";
+            MySqlConnection mySqlConnection = new MySqlConnection(connection);
+            mySqlConnection.Open();
+
+            MySqlDataReader ticket_query = 
         }
     }
 }
