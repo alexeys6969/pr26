@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Airlines_Shashin", "Airlines_Shashin.csproj", "{5F16B569-D805-40B0-812B-19F08B49862C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingBd", "..\WorkingBd\WorkingBd.csproj", "{7330518E-9A3E-4226-9B5F-B7635B5329F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5F16B569-D805-40B0-812B-19F08B49862C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F16B569-D805-40B0-812B-19F08B49862C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F16B569-D805-40B0-812B-19F08B49862C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7330518E-9A3E-4226-9B5F-B7635B5329F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7330518E-9A3E-4226-9B5F-B7635B5329F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7330518E-9A3E-4226-9B5F-B7635B5329F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7330518E-9A3E-4226-9B5F-B7635B5329F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
