@@ -4,26 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Airlines_Shashin.Elements"
-             mc:Ignorable="d" Height="154" Width="752">
-    <Grid Background="LightGray" Margin="10,10,10,0" VerticalAlignment="Top">
+             mc:Ignorable="d" >
+    <Grid Background="LightGray" Margin="10,10,10,10" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="229*"/>
             <ColumnDefinition Width="109*"/>
             <ColumnDefinition Width="279*"/>
             <ColumnDefinition Width="135*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="1999 Р" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0" Height="24" Width="55"/>
+        <TextBlock Text="1999 Р" x:Name="Price" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0" Height="24" Width="55"/>
         <Button Content="Подробнее" Foreground="White" Background="Orange" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,60,0,0" Width="140" Height="20"/>
 
         <TextBlock Text="Pobeda" Grid.Column="1" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="40"/>
-        <TextBlock Text="05:50" Grid.Column="1" Margin="10,40,0,0" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Width="43"/>
-        <TextBlock Text="Пермь" Grid.Column="1" Margin="10,0,0,30" FontWeight="Light"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="16" Width="34"/>
-        <TextBlock Text="29 сентября 2021" Grid.Column="1" Margin="10,111,0,10" FontWeight="Light"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="16" Width="90"/>
-        <TextBlock Text="В пути 2ч 15м" Grid.Column="2" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="8" Margin="0,0,0,10"/>
+        <TextBlock Text="05:50" x:Name="TimeStart" Grid.Column="1" Margin="10,40,0,0" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Width="43"/>
+        <TextBlock Text="Пермь" x:Name="From" Grid.Column="1" Margin="0,0,0,30" FontWeight="Light"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="16" Width="34"/>
+        <TextBlock Text="29 сентября 2021" x:Name="DateStart" Grid.Column="1" Margin="0,111,0,0" FontWeight="Light"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="16" Width="99"/>
+        <TextBlock Text="В пути 2ч 15м" x:Name="TimeWay" Grid.Column="2" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="8" Margin="0,0,0,10"/>
         <Grid Background="DarkGray" Grid.Column="2" Margin="0,68,0,67" VerticalAlignment="Center" Height="2"/>
         <TextBlock Text="Pobeda" Grid.Column="3" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="16" Width="40"/>
-        <TextBlock Text="06:05" Grid.Column="3" Margin="10,40,0,0" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Width="43"/>
-        <TextBlock Text="Пермь" Grid.Column="3" Margin="10,0,0,30" FontWeight="Light"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="16" Width="34"/>
-        <TextBlock Text="29 сентября 2021" Grid.Column="3" Margin="10,111,0,10" FontWeight="Light"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="16" Width="90"/>
+        <TextBlock Text="06:05" x:Name="TimeArrival" Grid.Column="3" Margin="10,40,0,0" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Width="43"/>
+        <TextBlock Text="Пермь" x:Name="To" Grid.Column="3" Margin="0,0,0,30" FontWeight="Light"  VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="16" Width="34"/>
+        <TextBlock Text="29 сентября 2021" x:Name="DateEnd" Grid.Column="3" Margin="0,111,0,0" FontWeight="Light"  VerticalAlignment="Top" HorizontalAlignment="Center" Height="16" Width="99"/>
     </Grid>
 </UserControl>

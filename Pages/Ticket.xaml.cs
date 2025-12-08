@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Google.Protobuf.WellKnownTypes;
+using WorkingBd;
 
 namespace Airlines_Shashin.Pages
 {
@@ -20,9 +22,36 @@ namespace Airlines_Shashin.Pages
     /// </summary>
     public partial class Ticket : Page
     {
+        List<Classes.TicketClass> TicketList;
         public Ticket(string from, string to)
         {
             InitializeComponent();
+
+            TicketList = MainWindow.mainWindow.LoadTickets(from, to);
+            parrent.Children.Clear();
+            foreach (var ticket in TicketList)
+            {
+
+                    var aviaItem = new Elements.Avia_Itm();
+
+                    aviaItem.SetData(
+                        ticket.price,
+                        ticket.from,
+                        ticket.to,
+
+                        ticket.time_start,
+                        ticket.time_way
+
+                    );
+
+                    parrent.Children.Add(aviaItem);
+                
+            }
+
+            if (TicketList.Count == 0)
+            {
+                MessageBox.Show("Не найдено данных");
+            }
         }
 
         private void Back(object sender, RoutedEventArgs e)

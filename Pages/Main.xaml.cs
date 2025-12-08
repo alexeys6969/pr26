@@ -23,6 +23,8 @@ namespace Airlines_Shashin.Pages
         public Main()
         {
             InitializeComponent();
+
+
         }
 
         private void Exit(object sender, RoutedEventArgs e)

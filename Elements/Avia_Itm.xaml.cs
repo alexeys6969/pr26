@@ -20,9 +20,22 @@ namespace Airlines_Shashin.Elements
     /// </summary>
     public partial class Avia_Itm : UserControl
     {
+
         public Avia_Itm()
         {
             InitializeComponent();
+        }
+        public void SetData(string price, string from, string to, DateTime time_start, TimeSpan time_way)
+        {
+            TimeSpan duration = time_way;
+
+            Price.Text = price;
+            From.Text = from;
+            To.Text = to;
+            TimeStart.Text = time_start.ToString("HH:mm");
+            TimeWay.Text = $"Время в пути: {time_way}";
+            DateStart.Text = time_start.ToString("dd MMMM yyyy");
+            TimeArrival.Text = time_start.Add(duration);
         }
     }
 }

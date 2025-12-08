@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Airlines_Shashin.Classes;
+using Airlines_Shashin.Elements;
 using MySql.Data.MySqlClient;
 
 namespace Airlines_Shashin
@@ -31,14 +32,54 @@ namespace Airlines_Shashin
             frame.Navigate(new Pages.Main());
         }
 
-        public void LoadTickets()
+        public List<TicketClass> LoadTickets(string from, string to)
         {
             ticketsClasses.Clear();
-            string connection = "server=localhost;port=3306;database=pr26;uid=root;pwd=root";
+            string connection = "server=127.0.0.1;port=3306;database=Airlines;uid=root;";
             MySqlConnection mySqlConnection = new MySqlConnection(connection);
             mySqlConnection.Open();
 
-            MySqlDataReader ticket_query = 
+            MySqlDataReader ticket_query = WorkingBd.Connection.Query($"SELECT price, `from`, `to`, time_start, time_way FROM Airlines.Tickets where `from` = '{from}' or `to` = '{to}'", mySqlConnection);
+            while(ticket_query.Read())
+            {
+                string price = ticket_query.IsDBNull(0) ? "" : ticket_query.GetString(0);
+                string fromCity = ticket_query.IsDBNull(1) ? "" : ticket_query.GetString(1);
+                string toCity = ticket_query.IsDBNull(2) ? "" : ticket_query.GetString(2);
+
+                DateTime timeStart = DateTime.MinValue;
+                TimeSpan timeWay = TimeSpan.Zero;
+
+                if (!ticket_query.IsDBNull(3))
+                {
+                    try
+                    {
+                        timeStart = ticket_query.GetDateTime(3);
+                    }
+                    catch
+                    {
+                        // Если это время, а не дата
+                        if (ticket_query.GetFieldType(3) == typeof(TimeSpan))
+                            timeStart = DateTime.Today.Add(ticket_query.GetTimeSpan(3));
+                    }
+                }
+
+                if (!ticket_query.IsDBNull(4))
+                {
+                    timeWay = ticket_query.GetTimeSpan(4);
+                }
+
+                TicketClass tickets = new TicketClass(
+                    price,
+                    fromCity,
+                    toCity,
+                    timeStart,
+                    timeWay
+                );
+
+                ticketsClasses.Add(tickets);
+            }
+            mySqlConnection.Close();
+            return ticketsClasses;
         }
     }
 }
