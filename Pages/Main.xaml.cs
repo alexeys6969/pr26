@@ -34,7 +34,7 @@ namespace Airlines_Shashin.Pages
 
         private void Search(object sender, RoutedEventArgs e)
         {
-            MainWindow.mainWindow.frame.Navigate(new Pages.Ticket(from.Text, to.Text));
+            MainWindow.mainWindow.frame.Navigate(new Pages.Ticket(from.Text, to.Text, tuda.SelectedDate, obratno.SelectedDate));
         }
     }
 }

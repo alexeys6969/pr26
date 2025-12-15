@@ -23,11 +23,11 @@ namespace Airlines_Shashin.Pages
     public partial class Ticket : Page
     {
         List<Classes.TicketClass> TicketList;
-        public Ticket(string from, string to)
+        public Ticket(string from, string to, DateTime? tuda, DateTime? obratno)
         {
             InitializeComponent();
 
-            TicketList = MainWindow.mainWindow.LoadTickets(from, to);
+            TicketList = MainWindow.mainWindow.LoadTickets(from, to, tuda, obratno);
             parrent.Children.Clear();
             foreach (var ticket in TicketList)
             {

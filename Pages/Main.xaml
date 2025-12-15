@@ -19,13 +19,17 @@
                 <ColumnDefinition Width="163*"/>
                 <ColumnDefinition Width="118*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="Поиск лучших авиабилетов" Foreground="White" FontWeight="Bold" FontSize="24" HorizontalAlignment="Left" Margin="0,70,0,307" Width="328" Grid.Column="1"/>
-            <TextBlock Text="Лучший способ купить авиабилеты дёшево" Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,120,0,0" Grid.Column="1" Height="21" Width="321"/>
-            <TextBlock Text="Откуда:" Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,160,0,0" Height="21" Width="55" Grid.Column="1"/>
-            <TextBox Grid.Column="1" x:Name="from" VerticalAlignment="Top" Margin="0,190,0,0" Height="25" HorizontalAlignment="Left" Width="326"/>
-            <TextBlock Text="Куда:" Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,220,0,0" Height="21" Width="55" Grid.Column="1"/>
-            <TextBox Grid.Column="1" x:Name="to" VerticalAlignment="Top" Margin="0,250,0,0" Height="25" HorizontalAlignment="Left" Width="326"/>
-            <Button Grid.Column="1" IsDefault="True" Click="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Margin="226,280,0,0" Content="Найти" Background="Orange" Foreground="White"/>
+            <TextBlock Text="Поиск лучших авиабилетов" Foreground="White" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" Margin="0,10,0,367" Width="328" Grid.Column="1"/>
+            <TextBlock Text="Лучший способ купить авиабилеты дёшево" Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,60,0,0" Grid.Column="1" Height="21" Width="321"/>
+            <TextBlock Text="Откуда:" Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,100,0,0" Height="21" Width="55" Grid.Column="1"/>
+            <TextBox Grid.Column="1" x:Name="from" VerticalAlignment="Top" Margin="0,130,0,0" Height="25" HorizontalAlignment="Center" Width="326"/>
+            <TextBlock Text="Куда:" Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,160,0,0" Height="21" Width="55" Grid.Column="1"/>
+            <TextBox Grid.Column="1" x:Name="to" VerticalAlignment="Top" Margin="0,190,0,0" Height="25" HorizontalAlignment="Center" Width="326"/>
+            <TextBlock Text="Туда:" Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,215,0,0" Height="21" Width="55" Grid.Column="1"/>
+            <DatePicker Grid.Column="1" BorderThickness="0" Margin="0,240,0,-240" x:Name="tuda"/>
+            <TextBlock Text="Обратно:" Foreground="White" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,265,0,0" Height="21" Width="73" Grid.Column="1"/>
+            <DatePicker Grid.Column="1" BorderThickness="0" Margin="0,290,0,-290" x:Name="obratno"/>
+            <Button Grid.Column="1" IsDefault="True" Click="Search" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Margin="226,320,0,0" Content="Найти" Background="Orange" Foreground="White"/>
         </Grid>
     </Grid>
 </Page>

@@ -32,14 +32,21 @@ namespace Airlines_Shashin
             frame.Navigate(new Pages.Main());
         }
 
-        public List<TicketClass> LoadTickets(string from, string to)
+        public List<TicketClass> LoadTickets(string from, string to, DateTime? tuda, DateTime? obratno)
         {
+            string tudaTxt = tuda?.ToString("yyyy-MM-dd");
+            string obratnoTxt = obratno?.ToString("yyyy-MM-dd");
             ticketsClasses.Clear();
             string connection = "server=127.0.0.1;port=3306;database=Airlines;uid=root;";
             MySqlConnection mySqlConnection = new MySqlConnection(connection);
             mySqlConnection.Open();
-
-            MySqlDataReader ticket_query = WorkingBd.Connection.Query($"SELECT price, `from`, `to`, time_start, time_way FROM Airlines.Tickets where `from` = '{from}' or `to` = '{to}'", mySqlConnection);
+            MySqlDataReader ticket_query = WorkingBd.Connection.Query($"SELECT price, `from`, `to`, time_start, time_way " +
+                $"FROM Airlines.Tickets " +
+                $"WHERE (`from` = '{from}' AND `to` = '{to}' AND DATE(time_start) = '{tudaTxt}') " +
+                $"UNION ALL " +
+                $"SELECT price, `from`, `to`, time_start, time_way " +
+                $"FROM Airlines.Tickets " +
+                $"WHERE (`from` = '{to}' AND `to` = '{from}' AND DATE(time_start) = '{obratnoTxt}')", mySqlConnection);
             while(ticket_query.Read())
             {
                 string price = ticket_query.IsDBNull(0) ? "" : ticket_query.GetString(0);
