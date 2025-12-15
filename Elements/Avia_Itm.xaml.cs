@@ -35,7 +35,9 @@ namespace Airlines_Shashin.Elements
             TimeStart.Text = time_start.ToString("HH:mm");
             TimeWay.Text = $"Время в пути: {time_way}";
             DateStart.Text = time_start.ToString("dd MMMM yyyy");
-            TimeArrival.Text = time_start.Add(duration);
+            string[] ArriveDate = time_start.Add(duration).ToString("dd.MMMM.yyyy HH:mm").Split(' ');
+            TimeArrival.Text = ArriveDate[1];
+            DateEnd.Text = ArriveDate[0].Replace('.', ' ');
         }
     }
 }

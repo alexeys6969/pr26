@@ -50,7 +50,14 @@ namespace Airlines_Shashin.Pages
 
             if (TicketList.Count == 0)
             {
-                MessageBox.Show("Не найдено данных");
+                TextBlock noneTickets = new TextBlock
+                {
+                    Text = "Билетов не найдено",
+                    FontSize = 24,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center,
+                };
+                parrent.Children.Add(noneTickets);
             }
         }
 

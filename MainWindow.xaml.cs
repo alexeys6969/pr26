@@ -57,7 +57,6 @@ namespace Airlines_Shashin
                     }
                     catch
                     {
-                        // Если это время, а не дата
                         if (ticket_query.GetFieldType(3) == typeof(TimeSpan))
                             timeStart = DateTime.Today.Add(ticket_query.GetTimeSpan(3));
                     }
